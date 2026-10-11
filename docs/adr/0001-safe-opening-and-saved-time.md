@@ -1,0 +1,2 @@
+# Safe opening and session time
+Use delayed mine placement excluding a 3×3 opening, retaining classic random boards rather than adding a no-guess solver: a safe opening is easy to explain but later guesses remain possible. Save elapsed active-session time and resume from it; excluding time while the tab is closed makes best times comparable for resumed games and avoids surprising time penalties. The serialized versioned format is validated rather than trusting browser storage.
