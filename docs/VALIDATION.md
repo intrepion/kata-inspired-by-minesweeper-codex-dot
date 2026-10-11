@@ -27,3 +27,8 @@ Independent standards/spec agents verified targeted fixes; both report no substa
 
 ## Final local checks
 34 deterministic tests passed; strict typecheck passed; production build passed (CSS 7.42 kB, JS 12.05 kB uncompressed); Prettier check passed; npm audit reported 0 vulnerabilities. Development server uses 127.0.0.1:5176 with strictPort. No changes were made to sibling games or their running ports.
+
+## Delivery state
+Final browser was reset to normal sizing and touch emulation disabled, then New field selected: beginner, all 81 cells covered, 00:00, flag mode off. `screenshots/ready.jpg` is final desktop evidence. Best-time record remains from QA. Private repository creation and push succeeded. GitHub Actions verifies each main push; final run URL and exact commit are provided in delivery response.
+
+Codex exposes file-panel opening but no repository/sidebar registration control in the available tool catalog. README was opened with the supported file-panel control (queued for this task); cloning and file-panel opening do not constitute sidebar project registration.
