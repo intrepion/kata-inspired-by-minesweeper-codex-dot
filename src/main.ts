@@ -30,12 +30,13 @@ function write(key: string, value: string) {
   }
 }
 const saved = read(SAVE);
-let game = decode(saved, Date.now()) ?? createGame("beginner"),
+const restored = decode(saved, Date.now());
+let game = restored ?? createGame("beginner"),
   best = decodeBest(read(BEST)),
   flagMode = false,
   focused = 0;
 let feedback = saved
-  ? decode(saved, Date.now())
+  ? restored
     ? "Your field is restored. Pick up where you left off."
     : "The saved field could not be restored. A fresh field is ready."
   : "Your first reveal opens safe ground.";
@@ -52,7 +53,7 @@ app.innerHTML = `<main>
 <div class="field-footer"><span id="field-info"></span><span id="best"></span></div>
 </section>
 <section class="guide" id="board-help" aria-label="How to play"><div><span class="guide-number">01</span><h2>Explore</h2><p>Click a square to reveal it. Numbers tell you how many mines touch that square.</p></div><div><span class="guide-number">02</span><h2>Mark</h2><p>Right-click or press <kbd>F</kbd> to flag a risk. On touch screens, turn on flag mode.</p></div><div><span class="guide-number">03</span><h2>Connect</h2><p>Click a revealed number to open its neighbors when enough flags surround it. Wrong flags can cost the field.</p></div></section>
-<footer class="page-footer"><p><span aria-hidden="true">↗</span> Arrow keys move · Enter / Space reveal · F flags · Home / End jump across a row</p><p>Safe first opening. Later moves may require a guess.</p><p id="storage-note">Saved on this device. Closed-tab time is excluded.</p></footer>
+<footer class="page-footer"><p><span aria-hidden="true">↗</span> Arrow keys move · Enter / Space reveal · F flags · Home / End jump across a row</p><p>Safe first opening. Later moves may require a guess. Swipe or scroll across wide fields.</p><p id="storage-note">Saved on this device. Closed-tab time is excluded.</p></footer>
 </main>`;
 function element<T extends HTMLElement = HTMLElement>(id: string): T {
   return document.getElementById(id) as T;
@@ -257,7 +258,7 @@ board.addEventListener("keydown", (e) => {
     if (!e.repeat) action(i, true);
   } else if (e.key === "Enter" || e.key === " ") {
     e.preventDefault();
-    if (!e.repeat) action(i, flagMode);
+    if (!e.repeat) action(i, false);
   }
 });
 element("restart").addEventListener("click", () => restart());

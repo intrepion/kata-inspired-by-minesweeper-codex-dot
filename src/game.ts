@@ -62,7 +62,7 @@ function finish(g: Game, status: "won" | "lost", now: number) {
   g.startedAt = null;
   g.status = status;
 }
-function place(g: Game, first: number, random: () => number) {
+function placeMines(g: Game, first: number, random: () => number) {
   const excluded = new Set([first, ...neighbors(g, first)]),
     candidates = g.cells.map((_, i) => i).filter((i) => !excluded.has(i));
   for (let i = candidates.length - 1; i > 0; i--) {
@@ -89,7 +89,7 @@ export function reveal(
   const c = g.cells[index];
   if (!c || c.flagged || g.status === "won" || g.status === "lost") return;
   if (g.status === "ready") {
-    place(g, index, random);
+    placeMines(g, index, random);
     g.status = "active";
     g.startedAt = now;
   }
@@ -140,7 +140,8 @@ export function decode(raw: string | null, now: number): Game | null {
     if (
       data.version !== 1 ||
       !g ||
-      !(g.difficulty in PRESETS) ||
+      typeof g.difficulty !== "string" ||
+      !Object.hasOwn(PRESETS, g.difficulty) ||
       !["ready", "active", "won", "lost"].includes(g.status) ||
       !Array.isArray(g.cells) ||
       !Number.isFinite(g.elapsedMs) ||
@@ -183,7 +184,7 @@ export function decode(raw: string | null, now: number): Game | null {
           (c, i) =>
             c.count !== neighbors(g, i).filter((n) => g.cells[n]!.mine).length,
         ) ||
-        !g.cells.some((c) => c.revealed)
+        !g.cells.some((c) => c.revealed && !c.mine && c.count === 0)
       )
         return null;
       if (g.status === "won" && (!allSafe || exposedMine)) return null;

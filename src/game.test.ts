@@ -8,6 +8,7 @@ import {
   encode,
   decode,
   recordBest,
+  decodeBest,
   seeded,
 } from "./game";
 describe("field rules", () => {
@@ -234,4 +235,30 @@ describe("more save validation", () => {
     raw.game.cells[0].revealed = "false";
     expect(decode(JSON.stringify(raw), 0)).toBeNull();
   });
+});
+
+it("rejects coerced non-string difficulties from storage", () => {
+  const data = JSON.parse(encode(createGame("beginner"), 0));
+  data.game.difficulty = ["beginner"];
+  expect(decode(JSON.stringify(data), 0)).toBeNull();
+});
+
+it("rejects a placed field with no revealed safe opening", () => {
+  const g = opened();
+  g.cells.forEach((c) => (c.revealed = false));
+  g.cells[0]!.revealed = true;
+  expect(decode(encode(g, 2000), 0)).toBeNull();
+});
+
+it("recovers corrupt best times without adopting invalid records", () => {
+  expect(decodeBest("{bad")).toEqual({});
+  expect(
+    decodeBest('{"beginner":-1,"intermediate":"fast","expert":12345}'),
+  ).toEqual({ expert: 12345 });
+  expect(decodeBest("null")).toEqual({});
+});
+it("rejects inherited preset names", () => {
+  const data = JSON.parse(encode(createGame("beginner"), 0));
+  data.game.difficulty = "__proto__";
+  expect(decode(JSON.stringify(data), 0)).toBeNull();
 });
