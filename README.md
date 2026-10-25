@@ -32,3 +32,7 @@ npm audit --audit-level=moderate
 Production files are in `dist/`. GitHub Actions runs the same checks. [Acceptance specification](docs/SPEC.md), [glossary](GLOSSARY.md), [decision](docs/adr/0001-safe-opening-and-saved-time.md), [validation evidence](docs/VALIDATION.md), and [skill adaptations](docs/SKILLS.md) explain the boundaries and verified coverage.
 
 Private repository; no public deployment. Browser QA screenshots are in `docs/screenshots/`.
+
+## Play online
+
+[Play the hosted game](https://intrepion.github.io/kata-inspired-by-minesweeper-codex-dot/)
