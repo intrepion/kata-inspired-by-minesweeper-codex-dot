@@ -36,3 +36,7 @@ Private repository; no public deployment. Browser QA screenshots are in `docs/sc
 ## Play online
 
 [Play the hosted game](https://intrepion.github.io/kata-inspired-by-minesweeper-codex-dot/)
+
+## Arcade metadata
+
+See [docs/arcade-metadata.md](docs/arcade-metadata.md) for the game-owned manifest and screenshot provenance.

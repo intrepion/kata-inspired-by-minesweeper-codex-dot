@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "gameId": "kata-inspired-by-minesweeper-codex-dot",
+  "playUrl": "https://intrepion.github.io/kata-inspired-by-minesweeper-codex-dot/",
+  "screenshots": [
+    {
+      "path": "arcade/screenshots/view-01.jpg",
+      "sha256": "07b0315a6b7e4d3b0eedf980b01732f7f19680eab82e4bc7e218743343d0d229",
+      "alt": "Completed game",
+      "provenance": {
+        "kind": "existing_repository_capture",
+        "sourcePath": "docs/screenshots/win.jpg",
+        "deployedBuild": null,
+        "captureDate": null
+      }
+    },
+    {
+      "path": "arcade/screenshots/view-02.jpg",
+      "sha256": "966dfd091e5e2588d6fc278ec191c5015c0c0770878e169169cc438c41a87e55",
+      "alt": "Game over",
+      "provenance": {
+        "kind": "existing_repository_capture",
+        "sourcePath": "docs/screenshots/loss.jpg",
+        "deployedBuild": null,
+        "captureDate": null
+      }
+    }
+  ]
+}
