@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "gameId": "kata-inspired-by-minesweeper-codex-dot",
   "playUrl": "https://intrepion.github.io/kata-inspired-by-minesweeper-codex-dot/",
   "screenshots": [
@@ -23,6 +23,46 @@
         "sourcePath": "docs/screenshots/loss.jpg",
         "deployedBuild": null,
         "captureDate": null
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-01.jpg",
+      "sha256": "23c26fb890f8a9c7ad2137d6cd53de2675b748c67cce3ea4fccccf164b5d03e2",
+      "alt": "Fieldwork gameplay, view 1",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-01.png",
+        "sourceSha256": "2ded6ed1fb7a4c37a167b9ad7d807c018d8a8636683cbc7938adb99172eb951b",
+        "captureCommit": "60fdc3c7b6f1db92df4807e3ef0f0beb8a96d80c",
+        "workflowRunId": "41405256595",
+        "inputHashes": {
+          "index.html": "20cec91fbdf27affd6c711109fa6b9b2f01b70e1fac98eb2960ed11e0a93e76c",
+          "assets/index-BCWnwWgD.css": "532e0f91d323c9ec3e6ad6f22d3afc9ffe96f38af7dc0035110a288585a3298e",
+          "assets/index-BcpRP0Vk.js": "1ecb25c4d8494b70159ff8e630b178bafb5d364268593b715ce2c2a0b5cce6e7"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "58c945dd792f349b6ad80ab300af72fa5fcf46c90f6ed9eea6befbe941a1e42a"
+      }
+    },
+    {
+      "path": "arcade/screenshots/ci-20261102-02.jpg",
+      "sha256": "a1346cef0f7118c4ba666831b8ef2404f2c1548be6bfedb0b96f0c9f3658f84b",
+      "alt": "Fieldwork gameplay, view 2",
+      "provenance": {
+        "kind": "ci_gameplay_capture",
+        "sourcePath": "arcade/capture-evidence/ci-20261102-02.png",
+        "sourceSha256": "8cbc52e0b8e57bddb6bcd9628ac8cada65108e5ba2d62223612d18554d3f20ac",
+        "captureCommit": "60fdc3c7b6f1db92df4807e3ef0f0beb8a96d80c",
+        "workflowRunId": "41405256595",
+        "inputHashes": {
+          "index.html": "20cec91fbdf27affd6c711109fa6b9b2f01b70e1fac98eb2960ed11e0a93e76c",
+          "assets/index-BCWnwWgD.css": "532e0f91d323c9ec3e6ad6f22d3afc9ffe96f38af7dc0035110a288585a3298e",
+          "assets/index-BcpRP0Vk.js": "1ecb25c4d8494b70159ff8e630b178bafb5d364268593b715ce2c2a0b5cce6e7"
+        },
+        "publishedFilesVerifiedAt": "2026-11-02T19:01:20Z",
+        "captureRecordPath": "arcade/capture-evidence/ci-20261102-record.json",
+        "captureRecordSha256": "58c945dd792f349b6ad80ab300af72fa5fcf46c90f6ed9eea6befbe941a1e42a"
       }
     }
   ]
